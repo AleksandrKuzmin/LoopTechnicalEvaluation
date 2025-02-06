@@ -1,0 +1,15 @@
+[
+    {
+      "scenario": "Valid Login",
+      "email": "admin",
+      "password": "password123",
+      "expectedOutcome": "success"
+    },
+    {
+      "scenario": "Invalid Login - Wrong Password",
+      "email": "admin",
+      "password": "wrongpassword",
+      "expectedOutcome": "failure"
+    }
+  ]
+  
