@@ -1,5 +1,4 @@
-// pages/loginPage.ts
-import { Page, Locator } from '@playwright/test';
+import { Page, Locator, expect } from '@playwright/test';
 
 export class LoginPage {
   private page: Page;
@@ -15,24 +14,21 @@ export class LoginPage {
   }
 
   async navigate(): Promise<void> {
-    // Navigate to the demo app URL.
-    await this.page.goto('https://animated-gingersnap-8cf7f2.netlify.app/');
+    await this.page.goto('https://animated-gingersnap-8cf7f2.netlify.app/', { waitUntil: 'networkidle' });
   }
 
   async login(email: string, password: string): Promise<void> {
     await this.emailInput.fill(email);
     await this.passwordInput.fill(password);
     await this.loginButton.click();
+    await this.page.waitForLoadState('networkidle');
   }
 
   getLoginSuccessIndicator(): Locator {
-    // For example, after a successful login, a "Welcome" text appears.
-    // Adjust this locator based on actual application behavior.
-    return this.page.getByRole('heading', { name: 'Projects' });
+    return this.page.locator('h1:has-text("Projects")');
   }
 
   getErrorMessage(): Locator {
-    // Assume that an error message container appears with the class 'error-message'
     return this.page.getByText('Invalid username or password');
   }
 }

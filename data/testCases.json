@@ -1,0 +1,16 @@
+[
+  {
+    "scenario": "Verify Implement User Authentication in To Do",
+    "app": "Web Application",
+    "column": "To Do",
+    "task": "Implement user authentication",
+    "tags": ["Feature", "High Priority"]
+  },
+  {
+    "scenario": "Verify Fix Navigation Bug in To Do",
+    "app": "Web Application",
+    "column": "To Do",
+    "task": "Fix navigation bug",
+    "tags": ["Bug"]
+  }
+]
