@@ -1,0 +1,28 @@
+image: mcr.microsoft.com/playwright:focal
+
+stages:
+  - install
+  - test
+
+# Install dependencies
+install_dependencies:
+  stage: install
+  script:
+    - npm install
+    - npx playwright install --with-deps
+  artifacts:
+    paths:
+      - node_modules/
+    expire_in: 1h
+
+# Run Playwright tests
+run_tests:
+  stage: test
+  script:
+    - npx playwright test
+  artifacts:
+    when: always
+    paths:
+      - playwright-report/
+    expire_in: 7 days
+  allow_failure: false
