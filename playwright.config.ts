@@ -12,6 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -32,6 +33,14 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
 
+  use: {
+    headless: true, // Ensures tests run in CI
+    screenshot: 'only-on-failure',
+    trace: 'on',
+    video: 'on',
+  },
+  reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
+  
   /* Configure projects for major browsers */
   projects: [
     {
