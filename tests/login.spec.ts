@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/loginPage';
-import loginTestData from '../data/loginTestData.json';
+import { loginTestData } from '../data/loginTestData.json';
 
 test.describe('Login Tests', () => {
   for (const data of loginTestData) {
