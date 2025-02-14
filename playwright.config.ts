@@ -26,7 +26,7 @@ export default defineConfig({
     "resolveJsonModule": true,
     "esModuleInterop": true
     }
-  }
+  },
 
   projects: [
     {
