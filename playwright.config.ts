@@ -39,7 +39,10 @@ export default defineConfig({
     trace: 'on',
     video: 'on',
   },
-  reporter: [['html', { outputFolder: 'playwright-report', open: 'never' }]],
+  
+	reporter:
+	['list'],
+	[['html', { outputFolder: 'playwright-report', open: 'never' }]],
   
   /* Configure projects for major browsers */
   projects: [
