@@ -24,13 +24,15 @@ jobs:
         run: npx playwright install --with-deps
 
       - name: Run Playwright tests
-        run: npx playwright test || true  # Prevents CI from failing immediately if tests fail
+        run: |
+          npx playwright test || true
+          ls -l playwright-report/  # Debugging: Print report directory contents
 
       - name: Ensure Report Exists
         run: mkdir -p playwright-report  # Ensures the directory exists even if tests fail
 
       - name: Upload Playwright Report
-        if: always()  # Ensures report is uploaded even if tests fail
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
