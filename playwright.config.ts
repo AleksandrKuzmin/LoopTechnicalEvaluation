@@ -42,7 +42,7 @@ export default defineConfig({
   
 	reporter:
 	['list'],
-	[['html', { outputFolder: 'playwright-report', open: 'never' }]],
+	[['html', { outputFolder: 'playwright-report', open: 'never' }]]
   
   /* Configure projects for major browsers */
   projects: [
