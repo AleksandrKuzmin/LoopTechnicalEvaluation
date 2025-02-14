@@ -21,6 +21,13 @@ export default defineConfig({
     video: 'on',
   },
 
+  {
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+    }
+  }
+
   projects: [
     {
       name: 'chromium',
