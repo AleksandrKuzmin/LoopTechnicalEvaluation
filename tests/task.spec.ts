@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/loginPage';
 import { DashboardPage } from '../pages/dashboardPage';
-import loginTestData from '../data/loginTestData.json';
-import testCases from '../data/testCases.json';
+import { loginTestData } from '../data/loginTestData.json';
+import { testCases } from '../data/testCases.json';
 
 test.describe('Task Board Verification', () => {
   // Find valid login credentials
